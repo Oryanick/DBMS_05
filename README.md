@@ -385,9 +385,10 @@ BEGIN;
 -- your UPDATE here
 
 
-PRAGMA foreign_keys = ON;
 
--- 3b.1 Verlag ändern
+PRAGMA foreign_keys = ON;
+-- 1. Verlag ändern
+
 BEGIN;
 
 UPDATE buch
@@ -397,7 +398,8 @@ WHERE verlag = 'dtv';
 COMMIT;
 
 
--- 3b.2 Rückgabe setzen
+-- 2. Rückgabe setzen
+
 BEGIN;
 
 UPDATE ausleihe
@@ -407,7 +409,8 @@ WHERE ausleihe_id = 2;
 COMMIT;
 
 
--- 3b.3 Gebühr erhöhen
+-- 3. Gebühr erhöhen
+
 BEGIN;
 
 UPDATE buch
